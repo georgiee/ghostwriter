@@ -6,8 +6,9 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   entry: {
-    styles: path.join(__dirname, 'static', 'styles'),
+    application: path.join(__dirname, 'src', 'index.js'),
   },
+  context: path.resolve(__dirname, "src"),
   resolve: {
     modules: [
       'node_modules'
@@ -16,7 +17,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'static', 'dist'),
-    filename: '[name].css'
+    filename: '[name].js'
   },
   plugins: [
     new ExtractTextPlugin('[name].css'),
@@ -33,7 +34,17 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
+      },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' })

@@ -1,0 +1,115 @@
+
+.example-view {
+
+  position: relative;
+}
+
+.example-view__preview {
+  background-color: #333;
+
+  .example-view__preview-image {
+    transition: opacity 0.25s ease-out;
+  }
+
+  &:hover {
+    .example-view__preview-image {
+      opacity: 0.5;
+    }
+  }
+}
+
+.example-view__preview-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-view__preview {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-view{
+  .example-view__actions {
+    display: none;
+  }
+
+  &.flag--playing {
+    .example-view__preview{
+      display: none;
+    }
+    .example-view__actions {
+      display: block;
+    }
+  }
+
+}
+
+.example-view__play-button {
+  background-color: rgba(#fff, 0.75);
+  border-radius: 50%;
+
+  border: 0;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.example-view__new-window {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(#fff, 0.75);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.example-view__stop-button {
+  background-color: rgba(#fff, 0.75);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+
+  border: 0;
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+
+.example-view__actions {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+
+
+.example-view__iframe-holder{
+  padding-bottom: 56.25%;
+  height: 0;
+  position: relative;
+}
+
+
+.example-view__iframe{
+  border: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

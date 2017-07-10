@@ -1,0 +1,26 @@
+
+.page-holder {
+    display: flex;
+    min-height: 100vh;
+    flex-flow: column nowrap;
+}
+
+.page-holder__content {
+    flex: 1;
+}
+
+.page-holder__content {
+  padding-bottom: 20px;
+}
+
+.post-stub-date {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.post-stub-description {
+    display: block;
+    font-size: 14px;
+    color: #888888;
+    line-height: 120%;
+}

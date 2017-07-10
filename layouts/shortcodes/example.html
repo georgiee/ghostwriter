@@ -1,0 +1,17 @@
+<div class="example-view" data-src='{{ .Get "content" }}'>
+
+  <div class='example-view__preview'>
+    <div class='example-view__preview-image' style='background-image:url({{ .Get "preview" }})'>
+    </div>
+    <button class='example-view__play-button js--play'>play</button>
+  </div>
+
+  <div class='example-view__iframe-holder'>
+    <iframe class='example-view__iframe js--iframe' width='100%' height='100%'></iframe>
+  </div>
+
+  <div class='example-view__actions'>
+    <a href='###SOURCE###' target='_blank' class='example-view__new-window'></a>
+    <button class='example-view__stop-button js--stop'>stop</button>
+  </div>
+</div>

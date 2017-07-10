@@ -2,15 +2,13 @@
 // Colours //
 // ============================================================ //
 
-$primary: #F03838;
+$primary: #F22987;
 $secondary: #303030;
 $background: #FEFEFE;
 
 /* ============================================================ */
 /* Base */
 /* ============================================================ */
-
-html, body { height: 100%; }
 
 body {
     background: $background;
@@ -161,20 +159,6 @@ table {
     max-width: 889px;
 }
 
-#wrapper {
-    height: auto;
-        min-height: 100%;
-    /* This must be the same as the height of the footer */
-    margin-bottom: -265px;
-
-    &:after {
-        content: "";
-        display: block;
-        /* This must be the same as the height of the footer */
-        height: 265px;
-    }
-}
-
 .button {
     background: $secondary;
     border: none;
@@ -274,7 +258,12 @@ table {
     padding: 0 0 20px;
     text-align: center;
     text-transform: uppercase;
+    .post-description, .post-date {
+        text-transform: none;
+    }
 }
+
+
 
 .post-title,
 .page-title {
@@ -529,15 +518,16 @@ table {
 .footer {
     background: $secondary;
     color: #D3D3D3;
-    height: 265px;
-    margin-top: 95px;
     overflow: auto;
-
-    .site-title-wrapper { margin: 80px auto 35px; }
+    padding: 40px;
 
     .site-title a:hover,
     .button-square:hover {
         background: #121212;
+    }
+
+    .site-title-wrapper {
+        margin-bottom: 20px;
     }
 }
 
