@@ -1,6 +1,16 @@
+.example-actions {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.example-actions__item  {
+  & + & {
+    margin-left: 10px;
+  }
+}
 
 .example-view {
-
   position: relative;
 }
 
@@ -42,10 +52,11 @@
     display: none;
   }
 
-  &.flag--playing {
+  &.is-playing {
     .example-view__preview{
       display: none;
     }
+
     .example-view__actions {
       display: block;
     }
@@ -69,24 +80,15 @@
 
 
 .example-view__new-window {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
+  background-color: transparent;
+  border: none;
+  display: block;
+  width: 25px;
+  height: 25px;
   background-color: rgba(#fff, 0.75);
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.example-view__stop-button {
-  background-color: rgba(#fff, 0.75);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 50%;
-
-  border: 0;
-  width: 35px;
-  height: 35px;
-  display: inline-block;
+  padding: 5px;
 }
 
 .example-view__actions {
@@ -94,8 +96,6 @@
   right: 0;
   bottom: 0;
 }
-
-
 
 .example-view__iframe-holder{
   padding-bottom: 56.25%;

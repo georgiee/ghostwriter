@@ -1,17 +1,28 @@
-<div class="example-view" data-src='{{ .Get "content" }}'>
+<div class="example-actions">
+  <div class="example-actions__item">
+    <a target="_blank" href="{{ .Get "content" }}">Open in new window</a>
+  </div>
+
+
+  {{ with .Get "repository" }}
+  <div class="example-actions__item">
+    <iframe src="https://ghbtns.com/github-btn.html?user=georgiee&repo={{ . }}&type=star&size=large"
+  frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+  {{ end }}
+  </div>
+
+</div>
+
+<div class="example-view js-example-view" data-src='{{ .Get "content" }}'>
 
   <div class='example-view__preview'>
     <div class='example-view__preview-image' style='background-image:url({{ .Get "preview" }})'>
     </div>
-    <button class='example-view__play-button js--play'>play</button>
+    <button class='example-view__play-button js-play'>play</button>
   </div>
 
   <div class='example-view__iframe-holder'>
-    <iframe class='example-view__iframe js--iframe' width='100%' height='100%'></iframe>
+    <iframe class='example-view__iframe js-iframe' width='100%' height='100%'></iframe>
   </div>
 
-  <div class='example-view__actions'>
-    <a href='###SOURCE###' target='_blank' class='example-view__new-window'></a>
-    <button class='example-view__stop-button js--stop'>stop</button>
-  </div>
 </div>
